@@ -13,6 +13,7 @@ class CreateWorkSpace(APIView):
 
     def post(self, request, format=None):
         print('-------------->',request,'<-------------------')
+        print(request.data)
         serializer = serializers.CreateWSSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
